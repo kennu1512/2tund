@@ -1,3 +1,21 @@
+<?php 
+
+//var_dump($_GET); 
+//echo "<br>";
+//var_dump ($_POST);
+
+$signupEmailError = "";
+
+//kas on üldse olemas
+If (isset ($_POST["signupEmail"])) {
+	
+	//oli olemas, ehk keegi vajutas nuppu
+	if (empty ($_POST["signupEmail"])) {
+		//oli tõesti tühi
+		$signupEmailError = "see väli on kohustuslik";
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
      <head>
@@ -33,7 +51,7 @@
 		 
 		 
 		      
-		     <input placeholder="E-post" name="signupEmail" type="email">
+		     <input placeholder="E-post" name="signupEmail" type="email"> <?php echo $signupEmailError; ?>
 		     
 			 <br><br>
 			 
